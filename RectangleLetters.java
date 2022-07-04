@@ -1,3 +1,4 @@
+
 public class RectangleLetters {
     // Programm that makes a rectangle from a letter of choice.
     public static void main(String[] args) {
