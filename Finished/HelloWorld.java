@@ -8,7 +8,7 @@ public class HelloWorld {
     String[] greet = new String[12];
     Random rand = new Random();
     char charar;
-    
+
     while(!String.join("", greet).equals("hello world!")){
     charar = (char)rand.nextInt(32,122);  
     switch (charar){
