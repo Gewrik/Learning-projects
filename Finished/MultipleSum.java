@@ -8,7 +8,6 @@ any numbers between Start (inclusive) and End (not inclusive) are multiple of nu
 Multiple, and then finds their total sum
 */
 
-
 public class MultipleSum {
 
     public static void main(String[] args) {
