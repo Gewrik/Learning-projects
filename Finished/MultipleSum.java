@@ -17,7 +17,7 @@ public class MultipleSum {
         int multiple = scanner.nextInt();
         scanner.close();
         int sum = 0;
-        for (int i = start; i < (end - 1); i++) {
+        for (int i = start; i < end; i++) {
             if (i%multiple != 0) continue; {
                 sum += i;
                 
