@@ -1,52 +1,50 @@
 public class Solution {
 
-
-
-
-
     public static void main(String[] args) {
-        int decimalNumber = Integer.MAX_VALUE;
-        System.out.println("Десятичное число " + decimalNumber + " равно двоичному числу " + toBinary(decimalNumber));
-        String binaryNumber = "1111111111111111111111111111111";
-        System.out.println("Двоичное число " + binaryNumber + " равно десятичному числу " + toDecimal(binaryNumber));
+        String binaryNumber = "100111010000";
+        System.out.println("Двоичное число " + binaryNumber + " равно шестнадцатеричному числу " + toHex(binaryNumber));
+        String hexNumber = "9d0";
+        String decimalNumber = "157";
+        System.out.println("Шестнадцатеричное число " + hexNumber + " равно двоичному числу " + toBinary(hexNumber));
     }
 
-    public static String toBinary(int decimalNumber) {
-        int binary = 0;
-        if (decimalNumber <= 0) 
-            return null;
-        while (decimalNumber != 0)
-            binary = (decimalNumber%2) + binary;
-            decimalNumber = decimalNumber/2;
-            return "0";
-        
+    /*Берем каждые четыре символа (бита) и проверяем, какому символу шестнадцатеричной кодировки он соответствует.
+    Например:
 
-        /*
-        while(десятичное число не равно 0) {
-        двоичное представление = остаток от деления десятичного числа на 2 + двоичное представление
-        десятичное число = десятичное число / 2
+    двоичное представление — "100111010000",
+        где "1001" — "9", "1101" — "d", "0000" — "0",
+    шестнадцатеричное представление — "9d0".*/
+    public static String toHex(String binaryNumber) {
+        String binaryNumberTemp = "";
+        String hexNumber = "";
+
+//        Check for null or empty string
+        if (binaryNumber == null || binaryNumber.equals(""))
+            return "";
+
+//        Check for binaryNumber to be divided by 4
+        while (binaryNumber.length() % 4 != 0) {
+            binaryNumber = binaryNumber + "0";
         }
-        */
-    }
-    /*
-for (int i = 0; i < длины двоичного представления; i++) {
-десятичное число = десятичное число + число из двоичного представления * на 2 в степени i
-}
-    */
-    public static int toDecimal(String binaryNumber) {
-        int decimal = 1;
-        if (binaryNumber.equals(null) || binaryNumber.equals(" ")|| binaryNumber.equals("")) {
-            return 0;
-        }else {
-            return decimal;
+
+
+        for (int i = 1; i < (binaryNumber.length() / 4) + 1; i++) {
+            if (i % 4 == 0) {
+                binaryNumberTemp = "";
+            }
+            binaryNumberTemp += binaryNumber.charAt(i);
+
+
         }
+        System.out.println(hexNumber);
+
+        return null;
+
+
     }
 
-
-
-
-
-
-
-
+    public static String toBinary(String hexNumber) {
+        //напишите тут ваш код
+        return null;
+    }
 }
