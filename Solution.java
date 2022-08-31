@@ -28,47 +28,26 @@ public class Solution {
         while (binaryNumber.length() % 4 != 0) {
             binaryNumber = binaryNumber + "0";
         }
+//        binaryNumber.length()/4 != hexNumber.length()
+        do {
+            for (int i = 0; i < binaryNumber.length(); i++) {
 
-        switch (binaryNumberTemp) {
-            case "0000":
-                hexNumber += "0";
-                break;
-            case "0001":
-                hexNumber += "1";
-                break;
-            case "0002":
-                hexNumber += "0";
-                break;
-            case "0003":
-                hexNumber += "0";
-                break;
-            case "0000":
-                hexNumber += "0";
-                break;
-            case "0001":
-                hexNumber += "1";
-                break;
-            case "0002":
-                hexNumber += "0";
-                break;
-            case "0003":
-                hexNumber += "0";
-                break;
-            case "0000":
-                hexNumber += "0";
-                break;
-            case "0001":
-                hexNumber += "1";
-                break;
-            case "0002":
-                hexNumber += "0";
-                break;
-            case "0003":
-                hexNumber += "0";
-                break;
+                if ((i % 4 == 0) && i != 0) {
 
-        }
 
+                    binaryNumberTemp = "";
+                }
+                binaryNumberTemp += (binaryNumber.charAt(i));
+
+
+            }
+
+
+
+        } ;
+
+
+        return hexNumber;
     }
 
     public static String toBinary(String hexNumber) {
