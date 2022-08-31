@@ -17,29 +17,57 @@ public class Solution {
     public static String toHex(String binaryNumber) {
         String binaryNumberTemp = "";
         String hexNumber = "";
+        String s;
 
 //        Check for null or empty string
         if (binaryNumber == null || binaryNumber.equals(""))
             return "";
 
 //        Check for binaryNumber to be divided by 4
+//        if not - add 0
         while (binaryNumber.length() % 4 != 0) {
             binaryNumber = binaryNumber + "0";
         }
 
-
-        for (int i = 1; i < (binaryNumber.length() / 4) + 1; i++) {
-            if (i % 4 == 0) {
-                binaryNumberTemp = "";
-            }
-            binaryNumberTemp += binaryNumber.charAt(i);
-
+        switch (binaryNumberTemp) {
+            case "0000":
+                hexNumber += "0";
+                break;
+            case "0001":
+                hexNumber += "1";
+                break;
+            case "0002":
+                hexNumber += "0";
+                break;
+            case "0003":
+                hexNumber += "0";
+                break;
+            case "0000":
+                hexNumber += "0";
+                break;
+            case "0001":
+                hexNumber += "1";
+                break;
+            case "0002":
+                hexNumber += "0";
+                break;
+            case "0003":
+                hexNumber += "0";
+                break;
+            case "0000":
+                hexNumber += "0";
+                break;
+            case "0001":
+                hexNumber += "1";
+                break;
+            case "0002":
+                hexNumber += "0";
+                break;
+            case "0003":
+                hexNumber += "0";
+                break;
 
         }
-        System.out.println(hexNumber);
-
-        return null;
-
 
     }
 
