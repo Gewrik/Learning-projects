@@ -29,7 +29,7 @@ public class Solution {
             binaryNumber = binaryNumber + "0";
         }
         do {
-            for (int i = 0; i < binaryNumber.length(); i++) {
+            for (int i = 0; i < binaryNumber.length() + 1; i++) {
 
                 if ((i % 4 == 0) && i != 0) {
                     switch (binaryNumberTemp) {
@@ -86,14 +86,15 @@ public class Solution {
 
                     binaryNumberTemp = "";
                 }
-                binaryNumberTemp += (binaryNumber.charAt(i));
-
-
+                try {
+                    binaryNumberTemp += (binaryNumber.charAt(i));
+                } catch (Exception e) {
+                    continue;
+                }
             }
-
-
-        } while (binaryNumber.length() / 4 != hexNumber.length());
-
+            System.out.println(binaryNumber.length());
+            System.out.println(hexNumber.length());
+        } while (binaryNumber.length() / 4 != hexNumber.length() && binaryNumberTemp.length() / 4 == 1);
 
         return hexNumber;
     }
