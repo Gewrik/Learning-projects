@@ -4,9 +4,9 @@ import java.util.regex.Pattern;
 public class Solution {
 
     public static void main(String[] args) {
-        String binaryNumber = "1000011100001100111100001";
+        String binaryNumber = "100111010000";
         System.out.println("Двоичное число " + binaryNumber + " равно шестнадцатеричному числу " + toHex(binaryNumber));
-        String hexNumber = "9d0";
+        String hexNumber = "8c0";
         System.out.println("Шестнадцатеричное число " + hexNumber + " равно двоичному числу " + toBinary(hexNumber));
     }
 
@@ -17,7 +17,7 @@ public class Solution {
         if (binaryNumber == null || binaryNumber.equals(""))
             return "";
 
-        Pattern pattern = Pattern.compile("([01])\\1*\n");
+        Pattern pattern = Pattern.compile("([01])*");
         Matcher matcher = pattern.matcher(binaryNumber);
         if (!matcher.matches()) {
             return "";
@@ -104,7 +104,7 @@ public class Solution {
         //        Check for null or empty string
         if (hexNumber == null || hexNumber.equals(""))
             return "";
-        Pattern pattern = Pattern.compile("^#?([a-f0-9]{6}|[a-f0-9]{3})$");
+        Pattern pattern = Pattern.compile("^([a-f0-9]{1,6})$");
         Matcher matcher = pattern.matcher(hexNumber);
         if (!matcher.matches()) {
             return "";
