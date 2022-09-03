@@ -1,12 +1,14 @@
+package Finished;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class Solution {
+public class HexToBinary {
 
     public static void main(String[] args) {
-        String binaryNumber = "100111010000";
+        String binaryNumber = "10011101000";
         System.out.println("Двоичное число " + binaryNumber + " равно шестнадцатеричному числу " + toHex(binaryNumber));
-        String hexNumber = "8c0";
+        String hexNumber = "9d0";
         System.out.println("Шестнадцатеричное число " + hexNumber + " равно двоичному числу " + toBinary(hexNumber));
     }
 
@@ -17,16 +19,20 @@ public class Solution {
         if (binaryNumber == null || binaryNumber.equals(""))
             return "";
 
-        Pattern pattern = Pattern.compile("([01])*");
+        Pattern pattern = Pattern.compile("[0-1]+");
         Matcher matcher = pattern.matcher(binaryNumber);
         if (!matcher.matches()) {
             return "";
         }
+
 //        Check for binaryNumber to be divided by 4
 //        if not - add 0
         while (binaryNumber.length() % 4 != 0) {
+            binaryNumber = new StringBuilder(binaryNumber).reverse().toString();
             binaryNumber = binaryNumber + "0";
+            binaryNumber = new StringBuilder(binaryNumber).reverse().toString();
         }
+
 
         do {
             for (int i = 0; i < binaryNumber.length() + 1; i++) {
@@ -104,7 +110,7 @@ public class Solution {
         //        Check for null or empty string
         if (hexNumber == null || hexNumber.equals(""))
             return "";
-        Pattern pattern = Pattern.compile("^([a-f0-9]{1,6})$");
+        Pattern pattern = Pattern.compile("[0-9A-Fa-f]+");
         Matcher matcher = pattern.matcher(hexNumber);
         if (!matcher.matches()) {
             return "";
