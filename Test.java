@@ -5,14 +5,26 @@ import java.util.regex.Pattern;
 
 public class Test {
     public static void main(String[] args) throws InterruptedException {
-        String binaryNumber = "100111010000e";
-        Pattern pattern = Pattern.compile("\\d+[0-1]");
+        Scanner console = new Scanner(System.in);
+        String path = console.nextLine();
 
-        Matcher matcher = pattern.matcher(binaryNumber);
-        if (matcher.matches()){
-            System.out.println("trye");
-        }else
-        System.out.println("false");
+        if (path.endsWith(".jpg") || path.endsWith(".jpeg"))
+        {
+            System.out.println("Это Jpeg!");
+        }
+        else if (path.endsWith(".htm") || path.endsWith(".html"))
+        {
+            System.out.println("Это HTML-страница");
+        }
+        else if (path.endsWith(".doc") || path.endsWith(".docx"))
+        {
+            System.out.println("Это документ Word");
+        }
+        else
+        {
+            System.out.println("Неизвестный формат");
+        }
+
     }
 
 }
