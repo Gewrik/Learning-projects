@@ -1,13 +1,16 @@
 public class Solution {
     public static void main(String[] args) {
-        String path = "/usr/java/jdk1.8/bin/";
-
-        String jdk13 = "jdk-13";
-        System.out.println(changePath(path, jdk13));
+        String first = new String("JavaRush");
+        String second = new String("JavaRush");
+        String third = new String("javarush");
+        System.out.println(equal(first, second));
+        System.out.println(equal(second, third));
     }
 
-    public static String changePath(String path, String jdk) {
-        return path.replace(path.substring(path.indexOf("jdk"),path.indexOf("/",path.indexOf("jdk")+1)),jdk);
+    public static boolean equal(String first, String second) {
+        String p1 = first.intern();
+        String p2 = second.intern();
 
+        return p1 == p2;
     }
 }

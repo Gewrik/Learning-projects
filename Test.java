@@ -1,34 +1,11 @@
-import java.util.Scanner;
-import java.util.Timer;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.StringTokenizer;
 
 public class Test {
-    public static void main(String[] args) throws InterruptedException {
-        Scanner console = new Scanner(System.in);
-        String path = console.nextLine();
+    public static void main(String[] args) {
 
-        if (path.endsWith(".jpg") || path.endsWith(".jpeg"))
-        {
-            System.out.println("Это Jpeg!");
-        }
-        else if (path.endsWith(".htm") || path.endsWith(".html"))
-        {
-            System.out.println("Это HTML-страница");
-        }
-        else if (path.endsWith(".doc") || path.endsWith(".docx"))
-        {
-            System.out.println("Это документ Word");
-        }
-        else
-        {
-            System.out.println("Неизвестный формат");
-        }
+
+        String s = String.format("a=%4$d, a=%3$d, x=%2$d, b=%2$d, c=%d", 11, 12, 13, 14);
+        System.out.println(s);
 
     }
-
 }
-
-
-
-
