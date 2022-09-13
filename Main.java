@@ -5,25 +5,25 @@ import java.util.Objects;
 public class Main {
 
     public static void main(String[] args) {
-        String[] memory = {"object15", null, null, "object2", null, null, null, "object32", null, "object4"};
+        String[] memory = {"object15", null, null, "object2", null, null, null, "object32", null, "object4", null, null, null, ""};
         executeDefragmentation(memory);
         System.out.println(Arrays.toString(memory));
-        System.out.println(memory.length);
 
     }
 
     public static void executeDefragmentation(String[] array) {
-        String[] newArray = Arrays.copyOf(array, array.length);
-        int j = 0;
-        for (int i = 1; i < array.length + 1; i++) {
-           if (array[i] == null) {
-                newArray[array.length - i] = null;
-                j++;
-            } else if (array[i] != null){
-               newArray[i - 1] = array[i];
+        String[] arrayNew = Arrays.copyOf(array, array.length);
+        int j = arrayNew.length - 1; //9
+        for (int i = array.length - 1 //9
+             ; i >= 0; i--) {
+
+            if (array[i] == null) {
+                arrayNew[j] = null;
+                j--; // j = 8 , i = 8;
             }
+
         }
-        System.out.println("newArray:" + Arrays.toString(newArray));
+        System.out.println(Arrays.toString(arrayNew));
 
     }
 
