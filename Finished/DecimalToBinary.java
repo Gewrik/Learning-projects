@@ -1,6 +1,6 @@
 package Finished;
 
-public class DecimaltoBinary {
+public class DecimalToBinary {
 
 
     public static void main(String[] args) {
