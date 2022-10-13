@@ -26,13 +26,10 @@ public class Solution {
 
     public static void paySalary(String name) {
         if (name == null) return;
-        waitingEmployees.remove(name);
-        alreadyGotSalaryEmployees.add(name);
+        if (waitingEmployees.contains(name)) {
+            waitingEmployees.remove(name);
+            alreadyGotSalaryEmployees.add(name);
+        }
     }
 }
-=======
-public class Solution {
 
-
-}
->>>>>>> origin/main
