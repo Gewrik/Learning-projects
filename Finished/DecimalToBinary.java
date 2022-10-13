@@ -4,7 +4,7 @@ public class DecimalToBinary {
 
 
     public static void main(String[] args) {
-        int decimalNumber = 256;
+        int decimalNumber = 159;
         System.out.println("Десятичное число " + decimalNumber + " равно двоичному числу " + toBinary(decimalNumber));
         String binaryNumber = "11011011100";
         System.out.println("Двоичное число " + binaryNumber + " равно десятичному числу " + toDecimal(binaryNumber));
