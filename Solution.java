@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.util.ArrayList;
 
 /*
@@ -29,3 +30,9 @@ public class Solution {
         alreadyGotSalaryEmployees.add(name);
     }
 }
+=======
+public class Solution {
+
+
+}
+>>>>>>> origin/main
