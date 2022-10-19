@@ -1,29 +1,67 @@
 
-import java.util.Arrays;
-import java.util.HashSet;
-
-import static java.util.Arrays.asList;
+import java.util.ArrayList;
+import java.util.Iterator;
 
 /*
-Проверка присутствия
+Найти и обезвредить
 */
 
 public class Solution {
-    public static HashSet<String> words = new HashSet<>(asList("Если бы меня попросили выбрать язык на замену Java я бы не выбирал".split(" ")));
 
-    public static void checkWords(String word) {
-        if (words.contains(word)) {
-            System.out.printf("Слово %s есть в множестве", word);
-            System.out.println();
+    public static void main(String[] args) {
+        ArrayList<String> words = new ArrayList<>();
+        words.add("Hello world!");
+        words.add("Amigo");
+        words.add("Elly");
+        words.add("Kerry");
+        words.add("Bug");
+        words.add("bug");
+        words.add("Easy ug");
+        words.add("Risha");
 
-        }else {
-            System.out.printf("Слова %s нет в множестве", word);
-            System.out.println();
+        ArrayList<String> copyWordsFirst = new ArrayList<>(words);
+        ArrayList<String> copyWordsSecond = new ArrayList<>(words);
+        ArrayList<String> copyWordsThird = new ArrayList<>(words);
+
+        removeBugWithFor(copyWordsFirst);
+        removeBugWithWhile(copyWordsSecond);
+        removeBugWithCopy(copyWordsThird);
+
+        copyWordsFirst.forEach(System.out::println);
+        String line = "_________________________";
+        System.out.println(line);
+        copyWordsSecond.forEach(System.out::println);
+        System.out.println(line);
+        copyWordsThird.forEach(System.out::println);
+        System.out.println(line);
+    }
+
+    public static void removeBugWithFor(ArrayList<String> list) {
+        for (int i = 0; i < list.size(); i++) {
+            String str = list.get(i);
+
+            if (str.equals("bug") || str.equals("Bug") || str.equals("bUg") || str.equals("buG") || str.equals("BUg") || str.equals("bUG") || str.equals("BuG") || str.equals("BUG")) {
+                list.remove(str);
+                i--;
+            }
         }
     }
 
-    public static void main(String[] args) {
-        checkWords("JavaScript");
-        checkWords("Java");
+    public static void removeBugWithWhile(ArrayList<String> list) {
+        Iterator<String> iterator = list.iterator();
+        while (iterator.hasNext()) {
+            String str = iterator.next();
+            if ((str.equals("bug") || str.equals("Bug") || str.equals("bUg") || str.equals("buG") || str.equals("BUg") || str.equals("bUG") || str.equals("BuG") || str.equals("BUG")))
+                iterator.remove();
+        }
+    }
+
+    public static void removeBugWithCopy(ArrayList<String> list) {
+        ArrayList<String> listCopy = new ArrayList(list);
+
+        for (String str : listCopy) {
+            if ((str.equals("bug") || str.equals("Bug") || str.equals("bUg") || str.equals("buG") || str.equals("BUg") || str.equals("bUG") || str.equals("BuG") || str.equals("BUG")))
+                list.remove(str);
+        }
     }
 }
