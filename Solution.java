@@ -1,30 +1,29 @@
 
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.HashSet;
 
+import static java.util.Arrays.asList;
+
 /*
-Оформляем возврат
+Проверка присутствия
 */
 
 public class Solution {
-    public static void main(String[] args) {
-        String[] array = {"Через", "три", "года", "я", "буду", "Senior", "Java", "Developer"};
-        for (int i = 0; i < array.length; i++) {
-            System.out.println(array[i]);
-        }
-        System.out.println("___________________________________");
+    public static HashSet<String> words = new HashSet<>(asList("Если бы меня попросили выбрать язык на замену Java я бы не выбирал".split(" ")));
 
-        HashSet<String> hashSet = arrayToHashSet(array);
-        for(String s : hashSet) {
-            System.out.println(s);
+    public static void checkWords(String word) {
+        if (words.contains(word)) {
+            System.out.printf("Слово %s есть в множестве", word);
+            System.out.println();
+
+        }else {
+            System.out.printf("Слова %s нет в множестве", word);
+            System.out.println();
         }
     }
 
-    public static HashSet<String> arrayToHashSet(String[] strings) {
-        HashSet<String> hashSet = new HashSet<String>();
-        for (int i = 0; i < strings.length; i++) {
-            hashSet.add(strings[i]);
-        }
-        return hashSet;
+    public static void main(String[] args) {
+        checkWords("JavaScript");
+        checkWords("Java");
     }
 }
